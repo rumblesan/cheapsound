@@ -1,0 +1,35 @@
+{
+  "name": "cheapsound",
+  "version": "1.0.0",
+  "description": "A simple MIDI live coding tool",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/rumblesan/cheapsound-js/issues"
+  },
+  "repository": "rumblesan/cheapsound-js",
+  "author": "Guy John <guy@rumblesan.com>",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js",
+    "test": "jest test"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-eslint": "7.2.3",
+    "babel-jest": "23.0.1",
+    "babel-preset-env": "1.7.0",
+    "dentist": "1.0.3",
+    "eslint": "4.19.1",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "jest": "23.1.0",
+    "nodemon": "1.18.8",
+    "prettier": "1.13.4"
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "canto34": "2.0.1",
+    "express": "4.16.4",
+    "midi": "0.9.5"
+  }
+}
