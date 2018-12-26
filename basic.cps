@@ -1,4 +1,6 @@
 
+print(1)
+
 import midi
 import chords as ch
 
