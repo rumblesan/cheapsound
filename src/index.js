@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import languageParser from './language/parser';
 import * as scheduler from './language/runtime/scheduler';
 import { stepInterpret } from './language/interpreter';
-import * as stdlib from './language/stdlib';
+import * as prelude from './language/stdlib/prelude';
 
 import * as logger from './logging';
 
@@ -14,7 +14,7 @@ app.use(bodyParser.text({ type: 'text/cheapsound' }));
 const port = 3000;
 
 const langstate = {};
-stdlib.setup(langstate);
+prelude.add(langstate);
 
 scheduler.start(langstate);
 
