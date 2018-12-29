@@ -1,4 +1,5 @@
 import midi from 'midi';
+import * as scheduler from '../runtime/scheduler';
 
 import { addFunc } from './util';
 
@@ -28,6 +29,12 @@ function closeMidiPortFunc() {
   output.closePort();
 }
 
-function playFunc(message) {
-  output.sendMessage(message);
+function playFunc({ note, duration, velocity, channel }) {
+  scheduler.addScheduledEvent(duration, 'once', {
+    type: 'lambda',
+    func: () => {
+      output.sendMessage([128 + channel, note, 0]);
+    },
+  });
+  output.sendMessage([144 + channel, note, velocity]);
 }
